@@ -10,28 +10,6 @@ import org.springframework.stereotype.Component;
 public class MyDemoLoggingAspect {
 	
 	
-	@Pointcut("execution(* com.javi.aopdemo.dao.*.*(..))")//create pointcut declaration
-	private void forDaoPackage() {
-		
-	}
-	
-	// create pointcut for getter methods
-	@Pointcut("execution(* com.javi.aopdemo.dao.*.get*(..))")//match getter methods
-	private void getter() {}
-	
-	
-	// create pointcut for setter methods
-	@Pointcut("execution(* com.javi.aopdemo.dao.*.set*(..))")//match setter methods
-	private void setter() {}
-	
-	
-	// create pointcut: include package ... exclude getter/setter
-	@Pointcut("forDaoPackage() && !(getter() || setter())")
-	private void forDaoPackageNoGetterSetter() {}
-	
-	
-	
-	
 	@Before("forDaoPackageNoGetterSetter()")//apply pointcut declaration to advice
 	public void beforeAddAccountAdvice() {
 		System.out.println("\n=====>>>> Executing @Before advice on method");
