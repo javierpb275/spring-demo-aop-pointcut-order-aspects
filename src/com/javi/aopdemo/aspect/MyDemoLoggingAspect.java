@@ -15,14 +15,5 @@ public class MyDemoLoggingAspect {
 		System.out.println("\n=====>>>> Executing @Before advice on method");
 	}
 	
-	@Before("forDaoPackageNoGetterSetter()")
-	public void performApiAnalytics() {
-		System.out.println("\n=====>>>> Performing API analytics");
-	}
-	
-	@Before("forDaoPackageNoGetterSetter()")
-	public void logToCloudAsync() {
-		System.out.println("\n=====>>>> Logging to Cloud in async fashion");
-	}
 
 }
