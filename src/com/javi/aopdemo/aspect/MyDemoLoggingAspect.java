@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class MyDemoLoggingAspect {
 	
 	
-	@Before("forDaoPackageNoGetterSetter()")//apply pointcut declaration to advice
+	@Before("com.javi.aopdemo.aspect.LuvAopExpressions.forDaoPackageNoGetterSetter()")//added fully qualified class name
 	public void beforeAddAccountAdvice() {
 		System.out.println("\n=====>>>> Executing @Before advice on method");
 	}

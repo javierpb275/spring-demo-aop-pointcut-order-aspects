@@ -7,23 +7,23 @@ import org.aspectj.lang.annotation.Pointcut;
 public class LuvAopExpressions {
 	
 	@Pointcut("execution(* com.javi.aopdemo.dao.*.*(..))")//create pointcut declaration
-	private void forDaoPackage() {
+	public void forDaoPackage() {
 		
 	}
 	
 	// create pointcut for getter methods
 	@Pointcut("execution(* com.javi.aopdemo.dao.*.get*(..))")//match getter methods
-	private void getter() {}
+	public void getter() {}
 	
 	
 	// create pointcut for setter methods
 	@Pointcut("execution(* com.javi.aopdemo.dao.*.set*(..))")//match setter methods
-	private void setter() {}
+	public void setter() {}
 	
 	
 	// create pointcut: include package ... exclude getter/setter
 	@Pointcut("forDaoPackage() && !(getter() || setter())")
-	private void forDaoPackageNoGetterSetter() {}
+	public void forDaoPackageNoGetterSetter() {}
 	
 
 }
